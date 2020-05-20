@@ -1,0 +1,10 @@
+gsettings set org.mate.peripherals-keyboard-xkb.kbd options "['grp\tgrp:toggle', 'grp_led\tgrp_led:caps', 'caps\tcaps:none']"
+gsettings set org.mate.peripherals-keyboard delay 200
+gsettings set org.mate.peripherals-keyboard rate 60
+
+gsettings set com.solus-project.brisk-menu hot-key ''
+
+gsettings set org.mate.Marco.global-keybindings switch-windows '<Ctrl>Tab>'
+gsettings set org.mate.Marco.global-keybindings switch-windows-backward 'disabled'
+gsettings set org.mate.Marco.global-keybindings cycle-group '<Ctrl>grave'
+gsettings set org.mate.Marco.global-keybindings cycle-group-backward 'disabled'
