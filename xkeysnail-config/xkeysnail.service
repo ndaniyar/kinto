@@ -9,7 +9,8 @@ ExecStart=/usr/bin/sudo /bin/bash -c '{experimental-caret}/home/{username}/.conf
 ExecStop=/bin/bash -c 'me=$$;ps -ef | grep \'[t]mp/kinto\' | awk -v me=$me \'$2 != me {print $2}\' | xargs kill;/usr/bin/killall dbus-monitor;/usr/bin/killall xkeysnail;{kill-caret}'
 Restart=on-failure
 RestartSec=3
-Environment=DISPLAY={displayid}
+Environment=DISPLAY={displayid} PYTHONUNBUFFERED=1
+StandardOutput=append:/home/daniyar/logs/xkeysnail/raw
 
 [Install]
 WantedBy=graphical.target
