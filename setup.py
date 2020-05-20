@@ -107,7 +107,7 @@ def setShortcuts():
 
 	cmdline("systemctl --user stop keyswap")
 	print("\nDetected " + distro + " " + distroVersion.strip() + " DE: " + dename + "\n")
-	addhotkeys = yn_choice("\nDo you want to apply system level shortcuts?")
+	addhotkeys = yn_choice("\nDo you want to apply system level shortcuts? NO")
 	if(addhotkeys):
 		distro = distro.lower()
 		if dename == "gnome" or dename == "mate":
@@ -376,7 +376,7 @@ color_arr = [bcolors.CBEIGE,bcolors.CRED2,bcolors.CGREEN,bcolors.CYELLOW ]
 print("\nKinto - Type in Linux like it's a Mac.\n")
 
 kintotype = int(input(color_arr[2] +
-	"1) Kinto - xkeysnail (udev/x11) - Recommended\n" + color_arr[0] +
+	"1) Kinto - xkeysnail (udev/x11) - Recommended  <-- this one!\n" + color_arr[0] +
 	"2) Kinto - Original xkb/x11 implementation\n" + color_arr[3] +
 	"3) Uninstall Kinto - xkeysnail\n" +
 	"4) Uninstall Kinto - Original xkb\n\n"

@@ -249,7 +249,9 @@ elif [[ $1 == "3" || $1 == "chromebook" ]]; then
 fi
 
 if [[ $1 == "1" || $1 == "2" || $1 == "3" || $1 == "winmac" || $1 == "mac" || $1 == "chromebook" ]]; then
-	mv ./xkeysnail-config/kinto.py.new ~/.config/kinto/kinto.py
+	#mv ./xkeysnail-config/kinto.py.new ~/.config/kinto/kinto.py
+    echo "Copy my basic version instead"
+	mv ./xkeysnail-config/kinto-basic.py ~/.config/kinto/kinto.py
 	# if [ "$distro" == "fedora" ];then
 	sudo rm /etc/systemd/system/xkeysnail.service
 	if [ -d /usr/lib/systemd/system ];then
