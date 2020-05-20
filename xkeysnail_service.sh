@@ -138,7 +138,7 @@ function budgieUpdate {
 if [ $# -eq 0 ]; then
 	echo "Install Kinto - xkeysnail (udev)"
 	echo "  1) Windows & Mac (HID driver)"
-	echo "  2) Mac Only & VMs on Macbooks"
+	echo "  2) Mac Only & VMs on Macbooks  <-- this one!"
 	echo "  3) Chromebook"
 	# echo "  4) Uninstall"
 
@@ -263,17 +263,17 @@ if [[ $1 == "1" || $1 == "2" || $1 == "3" || $1 == "winmac" || $1 == "mac" || $1
 	sudo ln -s "$xkeypath"xkeysnail.service /etc/systemd/system/xkeysnail.service && echo "Created soft symlink..." || echo "Failed to create soft symlink..."
 	sudo ln -s "$xkeypath"xkeysnail.service /etc/systemd/system/graphical.target.wants/xkeysnail.service && echo "Created soft symlink for graphical target..." || echo "Failed to create soft symlink for graphical target..."
 	xhost +SI:localuser:root
-	git clone --depth 10 https://github.com/rbreaves/xkeysnail.git || git pull --depth 10
+	git clone --depth 10 https://github.com/ndaniyar/xkeysnail.git || git pull --depth 10
 	cd xkeysnail
-	git checkout 51c369084e0045a8410d227bab52411bf84fb65b
+	#git checkout 51c369084e0045a8410d227bab52411bf84fb65b
 	giturl=$(git ls-remote --get-url)
 	if [ "$giturl" != "https://github.com/rbreaves/xkeysnail.git" ];then
-		echo -e "\nreplacing xkeysnail with fork...\n"
-		cd ..
-		rm -rf ./xkeysnail
-		git clone --depth 10 https://github.com/rbreaves/xkeysnail.git
-		cd xkeysnail
-		git checkout 51c369084e0045a8410d227bab52411bf84fb65b
+		echo -e "\nreplacing xkeysnail with fork... $giturl\n"
+		#cd ..
+		#rm -rf ./xkeysnail
+		#git clone --depth 10 https://github.com/rbreaves/xkeysnail.git
+		#cd xkeysnail
+		#git checkout 51c369084e0045a8410d227bab52411bf84fb65b
 	fi
 	sudo pip3 install --upgrade .
 	cd ..
