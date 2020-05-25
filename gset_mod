@@ -4,7 +4,7 @@ gsettings set org.mate.peripherals-keyboard rate 60
 
 gsettings set com.solus-project.brisk-menu hot-key ''
 
-gsettings set org.mate.Marco.global-keybindings switch-windows '<Ctrl>Tab>'
-gsettings set org.mate.Marco.global-keybindings switch-windows-backward 'disabled'
-gsettings set org.mate.Marco.global-keybindings cycle-group '<Ctrl>grave'
-gsettings set org.mate.Marco.global-keybindings cycle-group-backward 'disabled'
+org.mate.Marco.global-keybindings switch-windows '<Primary>Tab'
+org.mate.Marco.global-keybindings switch-windows-backward 'disabled'
+org.mate.Marco.global-keybindings switch-group '<Primary>grave'
+org.mate.Marco.global-keybindings cycle-group 'disabled'
